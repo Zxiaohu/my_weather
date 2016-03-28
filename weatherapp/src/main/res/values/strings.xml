@@ -1,0 +1,24 @@
+<resources>
+
+    <color name="blue">#03a9f4</color>
+    <color name="red">#e51c23</color>
+    <color name="black">#101010</color>
+    <color name="green">#8bc34a</color>
+    <color name="orange">#ff5722</color>
+    <color name="gray">#bbbbbb</color>
+    <color name="white">#ffffff</color>
+    <string name="ceshi">武汉</string>
+    <string name="weather">晴</string>
+    <string name="date_cs">2016年3月27</string>
+    <string name="date_cs1">三月二十七</string>
+    <string name="date_updatetip">更新时间</string>
+    <string name="date_update">21:22:42</string>
+    <string name="app_name">MyApplication</string>
+    <string name="reason">reason</string>
+    <string name="error_code">error_code</string>
+    <string name="result">result</string>
+    <string name="data">data</string>
+    <string name="life">life</string>
+    <string name="realtime">realtime</string>
+    <string name="appkey">d9d30049f1a6fbbfc4a27361e96fb1a7</string>
+</resources>

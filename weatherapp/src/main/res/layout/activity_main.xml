@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_64"
+        android:layout_marginTop="@dimen/dp_8"
+        >
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/main_tv_top"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="@dimen/dp_8"
+            android:text="@string/date_cs"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="32%"/>
+
+        <TextView
+            android:id="@+id/tv_moon"
+            style="@style/main_tv_top"
+            android:layout_below="@+id/tv_date"
+            android:gravity="top|left"
+            android:paddingLeft="@dimen/dp_8"
+            android:text="@string/date_cs1"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="32%"/>
+
+        <TextView
+            android:id="@+id/tv_cityname"
+            style="@style/main_tv_top"
+            android:layout_toRightOf="@+id/tv_date"
+            android:text="@string/ceshi"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/sp_18"
+            app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="14%"/>
+
+        <Button
+            android:id="@+id/btn_cityname"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_toRightOf="@+id/tv_cityname"
+            android:background="@drawable/selector_btn_normal"
+            android:text="切换"
+            android:textSize="@dimen/sp_18"
+            app:layout_heightPercent="50%"
+            app:layout_marginRightPercent="1%"
+            app:layout_widthPercent="20%"/>
+
+        <TextView
+            android:id="@+id/tv_endtime_tip"
+            style="@style/main_tv_top"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/btn_cityname"
+            android:gravity="center_vertical|right"
+            android:paddingRight="@dimen/dp_8"
+            android:text="@string/date_updatetip"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="32%"/>
+
+        <TextView
+            android:id="@+id/tv_endtime"
+            style="@style/main_tv_top"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_endtime_tip"
+            android:gravity="top|right"
+            android:paddingRight="@dimen/dp_8"
+            android:text="@string/date_update"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="32%"/>
+    </android.support.percent.PercentRelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_weatherstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/weather"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/sp_48"/>
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_144">
+        <!--温度-->
+        <TextView
+            android:id="@+id/tv_temperaturetip"
+            style="@style/weatherinfo_tip"
+            android:text="温度:"
+            app:layout_heightPercent="33%"
+            app:layout_widthPercent="50%"/>
+
+        <TextView
+            android:id="@+id/tv_temperature"
+            style="@style/weatherinfo_content"
+            android:layout_toRightOf="@+id/tv_temperaturetip"
+            android:text="@string/ceshi"
+            app:layout_heightPercent="33%"
+            app:layout_widthPercent="50%"
+            />
+        <!--湿度-->
+        <TextView
+            android:id="@+id/tv_humiditytip"
+            style="@style/weatherinfo_tip"
+            android:layout_below="@+id/tv_temperaturetip"
+            android:text="湿度:"
+            app:layout_heightPercent="33%"
+            app:layout_widthPercent="50%"/>
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            style="@style/weatherinfo_content"
+            android:layout_below="@id/tv_temperature"
+            android:layout_toRightOf="@+id/tv_humiditytip"
+            app:layout_heightPercent="33%"
+            app:layout_widthPercent="50%"
+            android:text="@string/ceshi"
+            />
+        <!--湿度-->
+        <TextView
+            android:id="@+id/tv_windtip"
+            style="@style/weatherinfo_tip"
+            android:layout_below="@+id/tv_humiditytip"
+            app:layout_heightPercent="33%"
+            app:layout_widthPercent="50%"
+            android:text="风况:"/>
+        <TextView
+            android:id="@+id/tv_wind"
+            style="@style/weatherinfo_content"
+            android:layout_below="@id/tv_humidity"
+            android:layout_toRightOf="@+id/tv_windtip"
+            app:layout_heightPercent="33%"
+            app:layout_widthPercent="50%"
+            android:text="@string/ceshi"
+            />
+    </android.support.percent.PercentRelativeLayout>
+
+   <include layout="@layout/weather_life"></include>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

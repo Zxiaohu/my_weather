@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_144"
+    android:padding="@dimen/dp_4">
+
+    <TextView
+        android:id="@+id/tv_xiyi"
+        style="@style/precent_tv_base"
+        android:background="@drawable/selector_tv_green"
+        android:gravity="center"
+        android:text="洗衣指数"
+        android:textColor="@color/white"
+        app:layout_heightPercent="32%"
+        app:layout_widthPercent="32%"/>
+
+    <TextView
+        android:id="@+id/tv_kongtiao"
+        style="@style/precent_tv_base"
+        android:layout_toRightOf="@+id/tv_xiyi"
+        android:background="@drawable/selector_tv_blue"
+        android:gravity="center"
+        android:text="空调指数"
+        android:textColor="@color/white"
+        app:layout_heightPercent="32%"
+        app:layout_marginLeftPercent="1%"
+        app:layout_marginRightPercent="1%"
+        app:layout_widthPercent="32%"/>
+
+    <TextView
+        android:id="@+id/tv_yundong"
+        style="@style/precent_tv_base"
+        android:layout_toRightOf="@+id/tv_kongtiao"
+        android:background="@drawable/selector_tv_orange"
+        android:gravity="center"
+        android:text="运动指数"
+        android:textColor="@color/white"
+        app:layout_heightPercent="66%"
+        app:layout_widthPercent="33%"/>
+
+    <TextView
+        android:id="@+id/tv_wuran"
+        style="@style/precent_tv_base"
+        android:layout_below="@+id/tv_xiyi"
+        android:background="@drawable/selector_tv_blue"
+        android:gravity="center"
+        android:text="污染指数"
+        android:textColor="@color/white"
+        app:layout_heightPercent="66%"
+        app:layout_marginTopPercent="2%"
+        app:layout_widthPercent="32%"
+        />
+
+    <TextView
+        android:id="@+id/tv_ziwaixian"
+        style="@style/precent_tv_base"
+        android:layout_below="@+id/tv_kongtiao"
+        android:layout_toRightOf="@+id/tv_wuran"
+        android:background="@drawable/selector_tv_green"
+        android:gravity="center"
+        android:text="紫外线"
+        android:textColor="@color/white"
+        app:layout_heightPercent="32%"
+        app:layout_marginLeftPercent="1%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="2%"
+        app:layout_widthPercent="32%"
+        />
+
+    <TextView
+        android:id="@+id/tv_pm25"
+        style="@style/precent_tv_base"
+        android:layout_below="@+id/tv_ziwaixian"
+        android:layout_toRightOf="@id/tv_wuran"
+        android:background="@drawable/selector_tv_blue"
+        android:gravity="center"
+        android:text="PM25"
+        android:textColor="@color/white"
+        app:layout_heightPercent="32%"
+        app:layout_marginLeftPercent="1%"
+        app:layout_marginTopPercent="2%"
+        app:layout_widthPercent="66%"/>
+</android.support.percent.PercentRelativeLayout>
