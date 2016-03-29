@@ -11,7 +11,6 @@ import com.zxh.weather.comm.base.BaseActivity;
 import com.zxh.weather.comm.http.MyCallBack;
 import com.zxh.weather.comm.http.XutilsHttp;
 import com.zxh.weather.comm.utils.AppResTools;
-import com.zxh.weather.comm.utils.ToastUtils;
 import com.zxh.weather.dao.WeatherDao;
 
 import org.xutils.view.annotation.ContentView;
@@ -44,12 +43,12 @@ public class MainActivity extends BaseActivity {
   @ViewInject(R.id.tv_wind)
   private TextView tv_wind;//风况
 
-  private String mUrl = "http://op.juhe.cn/onebox/weather/query?key=" + AppResTools.getStr(R.string.appkey);
-  @Event(value = R.id.btn_cityname,type =View.OnClickListener.class)
-  private void selectCityName(View v){
+  @Event(value = R.id.btn_cityname, type = View.OnClickListener.class)
+  private void selectCityName(View v) {
     TempActivity.setFrg4Ac(new SlectCityFragment());
-    startActivity(new Intent(this,TempActivity.class));
+    startActivity(new Intent(this, TempActivity.class));
   }
+
   /**
    * 把citynameurl编码后加入地址
    *
@@ -59,7 +58,8 @@ public class MainActivity extends BaseActivity {
   private String getUrl(String cityname) {
     try {
       //获取天气的地址
-      return mUrl + "&cityname=" + URLEncoder.encode(cityname, "utf-8");
+      return AppResTools.getStr(R.string.url_weather_info) + "&cityname=" + URLEncoder.encode
+              (cityname, "utf-8");
     } catch (UnsupportedEncodingException e) {
       e.printStackTrace();
     }
@@ -85,7 +85,11 @@ public class MainActivity extends BaseActivity {
     //LifeData.Info info =  weatherDao.getLifeData(result).info;
     /**获取天气的信息**/
     WeatherBean weatherBean = weatherDao.getWeatherBean(result);
-    ToastUtils.show(weatherBean.toString());
+
+//    if(weatherDao.insertWeatherBean2DB(result)){
+//      WeatherBean weatherBean =weatherDao.getWeatherBean4DB();
+//      Wind wind=weatherDao.getWind4DB();
+//      Weather weather=weatherDao.getWeather4DB();
     tv_cityname.setText(weatherBean.city_name);
     tv_date.setText(weatherBean.date);
     tv_moon.setText(weatherBean.moon);
@@ -94,7 +98,9 @@ public class MainActivity extends BaseActivity {
     tv_temperature.setText(weatherBean.weather.temperature + "度");
     tv_humidity.setText(weatherBean.weather.humidity + "度");
     tv_wind.setText(weatherBean.wind.direct + "--" + weatherBean.wind.power);
+//    }
   }
+
   @Override
   protected void initData() {
     fetchWeatherInfo("襄阳");

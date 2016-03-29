@@ -1,12 +1,16 @@
 package com.zxh.weather.dao;
 
 import com.zxh.weather.R;
-import com.zxh.weather.bean.weather.WeatherBean;
 import com.zxh.weather.bean.weather.LifeData;
+import com.zxh.weather.bean.weather.Weather;
+import com.zxh.weather.bean.weather.WeatherBean;
+import com.zxh.weather.bean.weather.Wind;
+import com.zxh.weather.comm.utils.AppDBUtils;
 import com.zxh.weather.comm.utils.AppResTools;
 import com.zxh.weather.comm.utils.JsonUtils;
 import com.zxh.weather.comm.utils.LogUtil;
-import com.zxh.weather.comm.utils.ToastUtils;
+
+import org.xutils.DbManager;
 
 
 /**
@@ -99,4 +103,35 @@ public class WeatherDao {
         weatherBean = JsonUtils.getObjByGson(weatherJson, WeatherBean.class);
         return weatherBean;
     }
+
+    /*****
+     * @param info
+     * @return
+     */
+    public boolean insertWeatherBean2DB(String info){
+        mDB = AppDBUtils.getDB();
+        boolean isCreate=false;
+        //如果从数据库中可以查到这些数据那么只做更新操作
+        WeatherBean weatherBean = getWeatherBean(info);
+        if(AppDBUtils.createTable(weatherBean)){
+            isCreate=true;
+        }
+        //将天气信息存到数据库
+        return isCreate;
+    }
+
+    private DbManager mDB = null;
+    public WeatherBean getWeatherBean4DB(){
+        mDB = AppDBUtils.getDB();
+      return AppDBUtils.findFirst(WeatherBean.class);
+    }
+    public Wind getWind4DB(){
+        mDB = AppDBUtils.getDB();
+        return AppDBUtils.findFirst(Wind.class);
+    }
+    public Weather getWeather4DB(){
+        mDB = AppDBUtils.getDB();
+        return AppDBUtils.findFirst(Weather.class);
+    }
+
 }

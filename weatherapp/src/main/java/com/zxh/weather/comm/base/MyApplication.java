@@ -20,5 +20,6 @@ public class MyApplication extends BaseApplication {
         super.onCreate();
         //初始化xutils
         x.Ext.init(this);
+
     }
 }

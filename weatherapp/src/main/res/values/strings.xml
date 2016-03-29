@@ -21,4 +21,7 @@
     <string name="life">life</string>
     <string name="realtime">realtime</string>
     <string name="appkey">d9d30049f1a6fbbfc4a27361e96fb1a7</string>
+    <string name="afd_appkey">f65538595c3547cba151d8a4ee7bb2fd</string>
+    <string name="url_china_area">http://api.avatardata.cn/SimpleArea/LookUp?key=f65538595c3547cba151d8a4ee7bb2fd</string>
+    <string name="url_weather_info">http://op.juhe.cn/onebox/weather/query?key=d9d30049f1a6fbbfc4a27361e96fb1a7</string>
 </resources>
